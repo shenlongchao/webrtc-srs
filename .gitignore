@@ -1,0 +1,12 @@
+*.iml
+.gradle
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.apk
+/lib_srs_rtc/build
+/lib_srs_rtc/webrtc/build

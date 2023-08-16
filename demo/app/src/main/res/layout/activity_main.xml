@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/ed1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:lines="1" />
+
+        <RadioGroup
+            android:id="@+id/rg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbPushAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音频" />
+
+            <RadioButton
+                android:id="@+id/rbPushVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="视频" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnStartPush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed1"
+            android:layout_alignParentEnd="true"
+            android:onClick="doPush"
+            android:text="push" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed1"
+            android:layout_toStartOf="@+id/btnStartPush"
+            android:onClick="stopPush"
+            android:text="stop" />
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/renderView1"
+            android:layout_width="320dp"
+            android:layout_height="240dp"
+            android:layout_below="@id/rg1"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/ed2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/renderView1"
+            android:inputType="text"
+            android:lines="1" />
+
+        <RadioGroup
+            android:id="@+id/rg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed2"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbPlayAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音频" />
+
+            <RadioButton
+                android:id="@+id/rbPlayVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="视频" />
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ed2"
+            android:layout_alignParentEnd="true"
+            android:onClick="doPlay"
+            android:text="play" />
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/renderView2"
+            android:layout_width="320dp"
+            android:layout_height="240dp"
+            android:layout_below="@id/rg2"
+            android:layout_centerHorizontal="true" />
+
+        <GridLayout
+            android:id="@+id/linButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/renderView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:columnCount="3"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSwitchAudioMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/renderView2"
+                android:text="扬声器切换" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSwitchCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摄像头切换" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMuteAudio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="音频开关" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMuteVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="视频开关" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnChangeCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推流清晰度" />
+
+        </GridLayout>
+
+    </RelativeLayout>
+</ScrollView>
